@@ -1,0 +1,168 @@
+/* ==============================================================================
+   ImdConnect — Design Tokens (Light, Dark & System Themes)
+   Based on ImdConnect Brand Guide & Visual Reference
+   ============================================================================== */
+
+:root {
+    /* Brand Color Tokens */
+    --color-primary: #2563EB;
+    --color-primary-hover: #1D4ED8;
+    --color-primary-light: #EFF6FF;
+    --color-primary-glow: rgba(37, 99, 235, 0.2);
+
+    --color-secondary: #8B5CF6;
+    --color-secondary-hover: #7C3AED;
+    --color-secondary-light: #F5F3FF;
+
+    /* Semantic Status Tokens */
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-danger: #EF4444;
+
+    /* Typography */
+    --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    /* Spacing & Radii */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 12px 24px -6px rgba(0, 0, 0, 0.12), 0 4px 8px -2px rgba(0, 0, 0, 0.06);
+
+    /* Safe Area Inset Injections */
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
+}
+
+/* Global Reset & Box-Sizing for Zero Horizontal Scrolling */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    -webkit-text-size-adjust: 100%;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+}
+
+/* ------------------------------------------------------------------------------
+   Light Theme (Default)
+   ------------------------------------------------------------------------------ */
+:root, [data-theme="light"] {
+    --bg-page: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-surface-elevated: #F1F5F9;
+    --bg-input: #F8FAFC;
+    --bg-hover: #F1F5F9;
+    --bg-active: #E2E8F0;
+
+    --border-color: #E2E8F0;
+    --border-focus: #2563EB;
+
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --text-muted: #94A3B8;
+    --text-inverse: #FFFFFF;
+
+    --accent: #2563EB;
+    --accent-hover: #1D4ED8;
+    --accent-light: #EFF6FF;
+    --accent-contrast: #FFFFFF;
+
+    --bubble-incoming: #F1F5F9;
+    --bubble-incoming-text: #0F172A;
+    --bubble-outgoing: #2563EB;
+    --bubble-outgoing-text: #FFFFFF;
+
+    --bottom-nav-bg: #FFFFFF;
+    --bottom-nav-border: #E2E8F0;
+}
+
+/* ------------------------------------------------------------------------------
+   Dark Theme
+   ------------------------------------------------------------------------------ */
+[data-theme="dark"] {
+    --bg-page: #0F172A;
+    --bg-surface: #1E293B;
+    --bg-surface-elevated: #26334D;
+    --bg-input: #151F33;
+    --bg-hover: #26334D;
+    --bg-active: #334155;
+
+    --border-color: #2E3A52;
+    --border-focus: #3B82F6;
+
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --text-inverse: #0F172A;
+
+    --accent: #2563EB;
+    --accent-hover: #3B82F6;
+    --accent-light: rgba(37, 99, 235, 0.15);
+    --accent-contrast: #FFFFFF;
+
+    --bubble-incoming: #26334D;
+    --bubble-incoming-text: #F8FAFC;
+    --bubble-outgoing: #2563EB;
+    --bubble-outgoing-text: #FFFFFF;
+
+    --bottom-nav-bg: #1E293B;
+    --bottom-nav-border: #2E3A52;
+}
+
+/* ------------------------------------------------------------------------------
+   System Default Theme
+   ------------------------------------------------------------------------------ */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]):not([data-theme="dark"]) {
+        --bg-page: #0F172A;
+        --bg-surface: #1E293B;
+        --bg-surface-elevated: #26334D;
+        --bg-input: #151F33;
+        --bg-hover: #26334D;
+        --bg-active: #334155;
+
+        --border-color: #2E3A52;
+        --border-focus: #3B82F6;
+
+        --text-primary: #F8FAFC;
+        --text-secondary: #94A3B8;
+        --text-muted: #64748B;
+        --text-inverse: #0F172A;
+
+        --accent: #2563EB;
+        --accent-hover: #3B82F6;
+        --accent-light: rgba(37, 99, 235, 0.15);
+        --accent-contrast: #FFFFFF;
+
+        --bubble-incoming: #26334D;
+        --bubble-incoming-text: #F8FAFC;
+        --bubble-outgoing: #2563EB;
+        --bubble-outgoing-text: #FFFFFF;
+
+        --bottom-nav-bg: #1E293B;
+        --bottom-nav-border: #2E3A52;
+    }
+}
